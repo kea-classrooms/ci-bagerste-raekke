@@ -1,10 +1,10 @@
 # This file should only be edited from the template
-name: mainline
+name: main
 
 on:
   push:
     branches:
-      - 'master'
+      - '**/issue**'
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -17,8 +17,9 @@ permissions:
 
 jobs:
   build:
-    name: verify_issue
+    name: mainline
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run:  echo ${{ github.sha }} | cut -c -7     
+      - run:  echo ${{ github.sha }} | cut -c -7
+      
