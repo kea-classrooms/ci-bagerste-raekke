@@ -4,7 +4,7 @@ name: mainline
 on:
   push:
     branches:
-      - '**'
+      - 'master'
 
 env:
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -17,8 +17,8 @@ permissions:
 
 jobs:
   build:
-    name: "Copy Issues from Template"
+    name: verify_issue
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: gh workflow disable template.yml
+      - run:  echo ${{ github.sha }} | cut -c -7     
