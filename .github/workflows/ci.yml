@@ -1,5 +1,5 @@
 # This file should only be edited from the template
-name: Classroom Repo Init from Template
+name: mainline
 
 on:
   push:
