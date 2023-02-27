@@ -21,6 +21,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: .github/template/cpissues.sh
-      - run: gh issue list -s all 
       - run: gh workflow disable template.yml
